@@ -1,0 +1,54 @@
+﻿<Window x:Class="QuanLyBenhVien.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Đăng Nhập" Height="450" Width="800" 
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+
+    <Border CornerRadius="20" Background="White" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" CornerRadius="20,0,0,20" Margin="-10,0,10,0">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Resources/Images/login/banner.jpg" Stretch="Fill"/>
+                </Border.Background>
+            </Border>
+
+            <StackPanel Grid.Column="1" Margin="30,20">
+                <Button Content="X" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0" 
+                        FontSize="18" Foreground="Gray" Click="btnClose_Click" Cursor="Hand"/>
+
+                <TextBlock Text="Đăng Nhập" Foreground="#27ae60" FontSize="32" FontWeight="Bold" 
+                           HorizontalAlignment="Center" Margin="0,10"/>
+
+                <Image Source="/Resources/Images/login/logo.ico" Height="60" Margin="0,10"/>
+
+                <TextBlock Text="Tài khoản:" FontSize="16" FontWeight="SemiBold" Margin="0,20,0,5"/>
+                <TextBox x:Name="txtUsername" Height="35" BorderThickness="0,0,0,2" BorderBrush="#2980b9" 
+                         VerticalContentAlignment="Center" FontSize="14" Foreground="#2c3e50"/>
+
+                <TextBlock Text="Mật khẩu:" FontSize="16" FontWeight="SemiBold" Margin="0,15,0,5"/>
+                <PasswordBox x:Name="txtPassword" Height="35" BorderThickness="0,0,0,2" BorderBrush="#2980b9" 
+                             VerticalContentAlignment="Center" FontSize="14"/>
+
+                <Button Content="Đăng Nhập" Margin="0,30" Height="45" Background="#27ae60" Foreground="White" 
+                        FontSize="18" FontWeight="Bold" BorderThickness="0" Click="btnLogin_Click" Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <Grid>
+                    <TextBlock Text="Đăng ký" Foreground="Blue" HorizontalAlignment="Left" Cursor="Hand"/>
+                    <TextBlock Text="Quên mật khẩu ?" Foreground="Blue" HorizontalAlignment="Right" Cursor="Hand"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

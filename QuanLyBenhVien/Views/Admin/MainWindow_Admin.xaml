@@ -1,0 +1,56 @@
+﻿<Window x:Class="QuanLyBenhVien.Views.Admin.MainWindow_Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hệ Thống Quản Trị Bệnh Viện" Height="750" Width="1300"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#34495e"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="10,2"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1abc9c"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#2c3e50">
+            <StackPanel>
+                <Ellipse Width="80" Height="80" Fill="#ecf0f1" Margin="0,30,0,10"/>
+                <TextBlock Text="ADMINISTRATOR" Foreground="White" FontWeight="Bold" 
+                           HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+                <TextBlock Text="QUẢN LÝ NHÂN SỰ" Foreground="#95a5a6" Margin="20,10,0,5" FontSize="11"/>
+                <Button Content="👥 Danh sách Nhân viên" Style="{StaticResource MenuButtonStyle}" Click="btnNhanVien_Click"/>
+                <Button Content="👨‍⚕️ Danh sách Bác sĩ" Style="{StaticResource MenuButtonStyle}" Click="btnBacSi_Click"/>
+
+                <TextBlock Text="QUẢN LÝ VẬT TƯ" Foreground="#95a5a6" Margin="20,20,0,5" FontSize="11"/>
+                <Button Content="💊 Nhập / Xuất Thuốc" Style="{StaticResource MenuButtonStyle}" Click="btnThuoc_Click"/>
+
+                <TextBlock Text="HỆ THỐNG" Foreground="#95a5a6" Margin="20,20,0,5" FontSize="11"/>
+                <Button Content="🚪 Đăng xuất" Height="45" Margin="10,2" Click="btnLogout_Click" Background="#c0392b" Foreground="White" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Column="1" Background="#f5f6fa">
+            <ContentControl x:Name="MainContentPresenter">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="HỆ THỐNG QUẢN LÝ BỆNH VIỆN" FontSize="30" FontWeight="Bold" Foreground="#2f3640"/>
+                    <TextBlock Text="Vui lòng chọn chức năng quản lý bên trái để bắt đầu" HorizontalAlignment="Center" Foreground="#7f8c8d" Margin="0,10"/>
+                </StackPanel>
+            </ContentControl>
+        </Grid>
+    </Grid>
+</Window>

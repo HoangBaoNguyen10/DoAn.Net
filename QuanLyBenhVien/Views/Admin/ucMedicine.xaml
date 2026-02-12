@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="QuanLyBenhVien.Views.Admin.ucMedicine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Background="White" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="QUẢN LÝ KHO THUỐC" FontSize="24" FontWeight="Bold" Foreground="#8e44ad" Margin="0,0,0,20"/>
+
+        <DataGrid Grid.Row="1" x:Name="dgMedicine" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Background="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã Thuốc" Binding="{Binding MaThuoc}" Width="100"/>
+                <DataGridTextColumn Header="Tên Thuốc" Binding="{Binding TenThuoc}" Width="*"/>
+                <DataGridTextColumn Header="Đơn Vị" Binding="{Binding DonVi}" Width="100"/>
+                <DataGridTextColumn Header="Số Lượng Tồn" Binding="{Binding SoLuongTon}" Width="120"/>
+                <DataGridTextColumn Header="Đơn Giá" Binding="{Binding Gia, StringFormat={}{0:N0} VNĐ}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Row="2" Background="#f9f9f9" CornerRadius="10" Margin="0,20,0,0" Padding="15">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,0,20,0">
+                    <TextBlock Text="Số lượng nhập thêm:"/>
+                    <TextBox x:Name="txtImportQty" Width="100" Height="30" Margin="0,5,0,0"/>
+                </StackPanel>
+                <Button Content="Cập Nhật Tồn Kho" Width="150" Height="35" VerticalAlignment="Bottom" 
+                        Background="#8e44ad" Foreground="White" BorderThickness="0" Click="btnUpdateStock_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
